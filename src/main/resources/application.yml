@@ -1,0 +1,72 @@
+spring:
+  liquibase:
+    enabled: true
+
+# MySQL Database
+  mysqldb:
+    datasource:
+      url: jdbc:mysql://localhost:3306/mysql_db
+      username: mysql_user
+      password: password
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      hikari:
+        connection-timeout: 30000
+        validation-timeout: 5000
+        initialization-fail-timeout: 120000
+        poolName: HikariPool-MySQL
+    liquibase:
+      url: jdbc:mysql://localhost:3306/mysql_db
+      username: mysql_user
+      password: password
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      hikari:
+        connection-timeout: 30000
+        validation-timeout: 5000
+        initialization-fail-timeout: 120000
+        poolName: HikariPool-Liquibase-MySQL
+
+  # Postgres Database
+  postgresdb:
+    datasource:
+      url: jdbc:postgresql://localhost:5432/postgres_db
+      username: postgres_user
+      password: password
+      driver-class-name: org.postgresql.Driver
+      hikari:
+        connection-timeout: 30000
+        validation-timeout: 5000
+        initialization-fail-timeout: 120000
+        poolName: HikariPool-Postgres
+    liquibase:
+      url: jdbc:postgresql://localhost:5432/postgres_db
+      username: postgres_user
+      password: password
+      driver-class-name: org.postgresql.Driver
+      hikari:
+        connection-timeout: 30000
+        validation-timeout: 5000
+        initialization-fail-timeout: 120000
+        poolName: HikariPool-Liquibase-Postgres
+
+  # Oracle Database
+  oracledb:
+    datasource:
+      url: jdbc:oracle:thin:@localhost:1521/oracle_db
+      username: system
+      password: password
+      driver-class-name: oracle.jdbc.OracleDriver
+      hikari:
+        connection-timeout: 30000
+        validation-timeout: 5000
+        initialization-fail-timeout: 120000
+        poolName: HikariPool-Oracle
+    liquibase:
+      url: jdbc:oracle:thin:@localhost:1521/oracle_db
+      username: system
+      password: password
+      driver-class-name: oracle.jdbc.OracleDriver
+      hikari:
+        connection-timeout: 30000
+        validation-timeout: 5000
+        initialization-fail-timeout: 120000
+        poolName: HikariPool-Liquibase-Oracle

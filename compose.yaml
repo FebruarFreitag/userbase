@@ -1,0 +1,30 @@
+services:
+  postgres-db:
+    image: postgres:15
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres_user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres_db
+    ports:
+      - "5432:5432"
+
+  mysql-db:
+    image: mysql:8
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: mysql_db
+      MYSQL_USER: mysql_user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+
+  oracle-db:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracle_db
+    environment:
+      ORACLE_PASSWORD: password
+      ORACLE_DATABASE: oracle_db
+    ports:
+      - "1521:1521"
